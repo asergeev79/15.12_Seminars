@@ -11,6 +11,6 @@ int i = -N;
 while (i < N) 
 {
     Console.Write($"{i}, ");
-    i += 1;
+    i++;
 }
 Console.WriteLine($"{N}");
