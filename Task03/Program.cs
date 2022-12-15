@@ -4,29 +4,29 @@
 // 5 -> Пятница
 
 Console.Write("Введите день недели: ");
-int weekday = Convert.ToInt32(Console.ReadLine());
+string weekday = Console.ReadLine();
 
 switch (weekday)
 {
-    case 1:
+    case "1":
         Console.WriteLine($"{weekday} -> Понедельник");
         break;
-    case 2:
+    case "2":
         Console.WriteLine($"{weekday} -> Вторник");
         break;
-    case 3:
+    case "3":
         Console.WriteLine($"{weekday} -> Среда");
         break;
-    case 4:
+    case "4":
         Console.WriteLine($"{weekday} -> Четверг");
         break;
-    case 5:
+    case "5":
         Console.WriteLine($"{weekday} -> Пятница");
         break;
-    case 6:
+    case "6":
         Console.WriteLine($"{weekday} -> Суббота");
         break;
-    case 7:
+    case "7":
         Console.WriteLine($"{weekday} -> Воскресенье");
         break;
     default:
