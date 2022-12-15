@@ -8,9 +8,9 @@ Console.Write("Введите натуральное число N: ");
 int N = Convert.ToInt32(Console.ReadLine());
 
 int i = -N;
-while (i <= N) 
+while (i < N) 
 {
-    Console.Write($"{i} ");
+    Console.Write($"{i}, ");
     i += 1;
 }
-Console.WriteLine("");
+Console.WriteLine($"{N}");
