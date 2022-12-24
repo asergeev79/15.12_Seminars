@@ -10,5 +10,7 @@ int num1 = Convert.ToInt32(Console.ReadLine());
 Console.Write("Введите второе целое число: ");
 int num2 = Convert.ToInt32(Console.ReadLine());
 
-string answer = (num1 % num2 == 0) ? $"Число {num1} кратно числу {num2}" : $"Число {num1} не кратно числу {num2}, остаток {num1 % num2}";
+string answer = (num1 % num2 == 0) 
+            ? $"Число {num1} кратно числу {num2}" 
+            : $"Число {num1} не кратно числу {num2}, остаток {num1 % num2}";
 Console.WriteLine(answer);

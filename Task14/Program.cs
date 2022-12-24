@@ -12,7 +12,9 @@ Console.WriteLine(Answer(num, 7, 23));
 
 string Answer(int number, int firstDigit, int secondDigit)
 {
-    return IsKratno(number, firstDigit, secondDigit) ? $"Число {number} кратно одновременно 7 и 23" : $"Число {number} не кратно одновременно 7 и 23";
+    return IsKratno(number, firstDigit, secondDigit) 
+                ? $"Число {number} кратно одновременно 7 и 23" 
+                : $"Число {number} не кратно одновременно 7 и 23";
 }
 
 bool IsKratno(int number, int firstDigit, int secondDigit)
