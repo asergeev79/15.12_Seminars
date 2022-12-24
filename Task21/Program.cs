@@ -19,5 +19,11 @@ double y2 = Convert.ToDouble(Console.ReadLine());
 Console.Write("Введите координату z второй точки:");
 double z2 = Convert.ToDouble(Console.ReadLine());
 
-double rass = Math.Sqrt((x2 - x1) * (x2 - x1) + (y2 - y1) * (y2 - y1) + (z2 - z1) * (z2 - z1));
-Console.WriteLine($"Расстояние между точками A({x1},{y1},{z1}) и B({x2},{y2},{z2}) -> {rass:f2}");
+Console.Write($"Расстояние между точками A({x1},{y1},{z1}) и B({x2},{y2},{z2}) -> ");
+Console.WriteLine($"{Rass(x1, y1, z1, x2, y2, z2):f2}");
+
+double Rass(double xc1, double yc1, double zc1, double xc2, double yc2, double zc2)
+{
+    
+    return Math.Sqrt((xc2 - xc1) * (xc2 - xc1) + (yc2 - yc1) * (yc2 - yc1) + (zc2 - zc1) * (zc2 - zc1));
+}

@@ -10,20 +10,16 @@
 Console.Write("Введите пятизначное целое число: ");
 int num = Convert.ToInt32(Console.ReadLine());
 
-if (num >= 10000 && num < 100000)
+Console.WriteLine(Answer(num));
+
+string Answer(int number)
 {
-    if (IsPalindrom(num))
+    if (number >= 10000 && number < 100000)
     {
-        Console.WriteLine($"Число {num} является палиндромом");
+        if (IsPalindrom(number)) return $"Число {number} является палиндромом";
+        else return $"Число {number} не является палиндромом";
     }
-    else
-    {
-        Console.WriteLine($"Число {num} не является палиндромом");
-    }
-}
-else
-{
-    Console.WriteLine("Введённое число не является пятизначным");
+    else return "Введённое число не является пятизначным";
 }
 
 bool IsPalindrom(int number)
