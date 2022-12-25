@@ -11,14 +11,30 @@
 Console.Write("Введите целое число: ");
 int num = Convert.ToInt32(Console.ReadLine());
 
-if (num > -100 && num < 100)
+if (!IsThreeDigit(num))
 {
     Console.WriteLine($"{num} -> третьей цифры нет");
 }
 else
 {
-    int thirdDigit = (num /100) % 10;
+    int thirdDigit = FindThirdDigit(num);
     thirdDigit = (thirdDigit > 0 ? thirdDigit : thirdDigit * (-1));
     Console.WriteLine("Третья цифра ведённого числа:");
     Console.WriteLine($"{num} -> {thirdDigit}");
+}
+
+bool IsThreeDigit(int number)
+{
+    return (number > -100 && number < 100) ? false : true;
+}
+
+int FindThirdDigit(int number)
+{
+    int thirdDigit = 0;
+    while (IsThreeDigit(number))
+    {
+        thirdDigit = number % 10;
+        number /= 10;
+    }
+    return thirdDigit;
 }
