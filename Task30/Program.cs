@@ -3,9 +3,10 @@
 // нулями и единицами в случайном порядке.
 // [1,0,1,1,0,1,0,0]
 
-int number = EnterNumber("Введите число: ");
-int[] array = new int[number];
-FillArray(array);
+int size = EnterNumber("Введите размер массива: ");
+int[] array = new int[size];
+int right = EnterNumber("Введите правую границу диапазона для случайных чисел: ");
+FillArray(array, right);
 PrintArray(array);
 
 int EnterNumber(string text) 
@@ -14,9 +15,9 @@ int EnterNumber(string text)
     return Convert.ToInt32(Console.ReadLine());
 }
 
-void FillArray(int[] arr)
+void FillArray(int[] arr, int num)
 {
-    for (int i = 0; i < arr.Length; i++) arr[i] = new Random().Next(2);
+    for (int i = 0; i < arr.Length; i++) arr[i] = new Random().Next(num + 1);
 }
 
 void PrintArray(int[] arr)
