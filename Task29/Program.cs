@@ -29,13 +29,15 @@ int EnterNumber(string text)
 void FillArray(int[] arr, int numA, int numB)
 {
     Random rnd = new Random();
-    for (int i = 0; i < arr.Length; i++) arr[i] = rnd.Next(numA, numB + 1);
+    for (int i = 0; i < arr.Length; i++) 
+        arr[i] = rnd.Next(numA, numB + 1);
 }
 
 void PrintArray(int[] arr)
 {
     Console.Write($"[{arr[0]}");
-    for (int i = 1; i < arr.Length; i++) Console.Write($",{arr[i]}");
+    for (int i = 1; i < arr.Length; i++) 
+        Console.Write($",{arr[i]}");
     Console.Write("]");
 }
 

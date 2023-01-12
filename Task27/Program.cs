@@ -9,7 +9,7 @@
 
 
 int number = EnterNumber("Введите число: ");
-int numberSumDigits = (number > 0) ? SumDigits(number) : SumDigits(-number);
+int numberSumDigits = SumDigits(number);
 PrintAnswer($"Сумма цифр числа {number}:", number, numberSumDigits);
 
 int SumDigits(int num)
@@ -20,7 +20,7 @@ int SumDigits(int num)
         sum += num % 10;
         num /= 10;
     }
-    return sum;
+    return sum > 0 ? sum : -sum;
 }
 
 int EnterNumber(string text) 

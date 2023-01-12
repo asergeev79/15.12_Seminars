@@ -11,7 +11,7 @@ int numberA = EnterNumber("Введите возводимое число A: ");
 int numberB = EnterNumber("Введите степень B: ");
 
 // Вычисление степени числа (как положительной, так и отрицательной)
-double powerAB = (numberB < 0) ? 1 / Power(numberA, -numberB) : Power(numberA, numberB);
+double powerAB = Power(numberA, numberB);
 
 // Вывод результата
 PrintAnswer($"Число {numberA} в степени {numberB}:", numberA, numberB, powerAB);
@@ -19,9 +19,10 @@ PrintAnswer($"Число {numberA} в степени {numberB}:", numberA, numbe
 // Метод вычисления степени числа
 double Power(int num1, int num2)
 {
+    int stepen = (num2 > 0) ? num2 : -num2;
     double result = 1;
-    for (int i = 0; i < num2; i++) result *= num1;
-    return result;
+    for (int i = 0; i < stepen; i++) result *= num1;
+    return (num2 > 0) ? result : (1 / result);
 }
 
 // Метод ввода численного целого значения
