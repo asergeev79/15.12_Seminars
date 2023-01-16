@@ -6,7 +6,22 @@
 // -----------------------------------------------------------------------
 
 int size = EnterNumber("Введите размер массива: ");
+int minSizeArray = 1;
+if (!IsCorrectSize(size, minSizeArray))
+{
+    Console.WriteLine($"Введите размер массива больше {minSizeArray - 1}");
+    return;
+}
+
 int left = 100, right = 1000;
+
+// Проверку на правильность задания диапазона не делаем, 
+// т.к. диапазон определён условием задачи
+// if (!IsCorrectInput(left, right))
+// {
+//     Console.WriteLine("Левая граница должна быть меньше правой!");
+//     return;
+// }
 
 int[] array = CreateArray(size, left, right);
 int[] evenArray = CountEvenInArray(array);
@@ -14,8 +29,11 @@ int[] evenArray = CountEvenInArray(array);
 Console.WriteLine("Количество чётных чисел в массиве случайных положительных трёхзначных чисел:");
 PrintArray(array);
 Console.WriteLine($"-> {evenArray.Length}");
-Console.WriteLine("Массив чётных чисел из изначального массива:");
-PrintArray(evenArray);
+if (evenArray.Length != 0)
+{
+    Console.WriteLine("Массив чётных чисел из изначального массива:");
+    PrintArray(evenArray);
+}
 
 int EnterNumber(string text) 
 {
@@ -40,6 +58,17 @@ void PrintArray(int[] arr)
     Console.WriteLine("]");
 }
 
+bool IsCorrectInput(int numA, int numB)
+{
+    return (numA >= numB) ? false : true;
+}
+
+bool IsCorrectSize(int num, int sizeMin)
+{
+    return (num < sizeMin) ? false : true;
+}
+
+// Метод создания массива из исходного на основе чётных элементов
 int[] CountEvenInArray(int[] arr)
 {
     int count = 0;
