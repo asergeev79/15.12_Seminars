@@ -8,8 +8,9 @@
 
 int countRows = EnterNumber("Введите кол-во строк массива: ");
 int countCols = EnterNumber("Введите кол-во столбцов массива: ");
+int countNum = EnterNumber("Введите число, с которого начинать заполнять массив по спирали:");
 
-int[,] array2D = CreateMatrixSpirally(countRows, countCols);
+int[,] array2D = CreateMatrixSpirally(countRows, countCols, countNum);
 Console.WriteLine("Массив, заполненный спирально:");
 PrintMatrix(array2D);
 
@@ -20,7 +21,7 @@ int EnterNumber(string text)
     return Convert.ToInt32(Console.ReadLine());
 }
 
-int[,] CreateMatrixSpirally(int rows, int columns)
+int[,] CreateMatrixSpirally(int rows, int columns, int countFrom)
 {
     int[,] matrix = new int[rows, columns];
     int leftHorizontalBorder = 0;
@@ -33,7 +34,7 @@ int[,] CreateMatrixSpirally(int rows, int columns)
     int i = 0;
     int j = 0;
 
-    for (int count = 0; count <= countAll; count++)
+    for (int count = countFrom; count < countAll + countFrom; count++)
     {
         matrix[i, j] = count;
         if (j == rightHorizontalBorder && stepHorizontal == 1)
